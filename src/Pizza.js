@@ -6,7 +6,7 @@ function Pizza({ details }) {
   }
 
   return (
-    <div className="friend container">
+    <div className="pizza-container">
         <p>Name of Order: {details.name}</p>
        <p>Size:{details.size}</p>
       <p>Sauce: {details.sauce}</p>

@@ -4,10 +4,4 @@
 
 form{
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  width:100%;
-  max-width: 300px;
-  margin: 0 auto;
-  padding-top: 20%;
 }

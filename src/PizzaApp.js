@@ -37,17 +37,17 @@ export default function PizzaApp() {
 //   const [formErrors, setFormErrors] = useState(initialFormErrors); // object
 //   const [disabled, setDisabled] = useState(initialDisabled);
 
-  const getFriends = () => {
-    // 🔥 STEP 5- IMPLEMENT! ON SUCCESS PUT FRIENDS IN STATE
-    //    helper to [GET] all friends from `http://localhost:4000/friends`
-    axios.get('https://reqres.in/api/users')
-      .then(res => {
-        setFriends(res.data.data)
-      })
-      .catch(err => {
-        debugger
-      })
-  }
+//   const getFriends = () => {
+//     // 🔥 STEP 5- IMPLEMENT! ON SUCCESS PUT FRIENDS IN STATE
+//     //    helper to [GET] all friends from `http://localhost:4000/friends`
+//     axios.get('https://reqres.in/api/users')
+//       .then(res => {
+//         setFriends(res.data.data)
+//       })
+//       .catch(err => {
+//         debugger
+//       })
+//   }
   const postNewFriend = (newFriend) => {
     // 🔥 STEP 6- IMPLEMENT! ON SUCCESS ADD NEWLY CREATED FRIEND TO STATE
     //    helper to [POST] `newFriend` to `http://localhost:4000/friends`
@@ -68,17 +68,16 @@ export default function PizzaApp() {
   const inputChange = (name, value) => {
     // yup
     // .reach(formSchema, name)
-    // //we can then run validate using the value
+
     // .validate(value)
-    // // if the validation is successful, we can clear the error message
+  
     // .then(valid => {
     //   setFormErrors({
     //     ...formErrors,
     //     [name]: "",
     //   })
     // })
-    /* if the validation is unsuccessful, we can set the error message to the message 
-      returned from yup (that we created in our schema) */
+    
     // .catch(err => {
     //   setFormErrors({
     //     ...formErrors,

@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Link } from "react-router-dom"
 import PizzaApp from "./PizzaApp";
+import Pizza from './Assets/Pizza.jpg'
 
 
 
@@ -8,11 +9,11 @@ const App = () => {
   return (
     <>
       <nav className="navbar">
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/pizza">Pizzas</Link></li>
+        <button><Link to="/">Home</Link></button>
+        <button><Link to="/pizza">Pizzas</Link></button>
       </nav>
       <h1>Lambda Eats</h1>
-      <p>You can remove this code and create your own header</p>
+      <img src={Pizza} alt= "pizza"></img>
       <Route path="/pizza" component={PizzaApp}/>
     </>
   );

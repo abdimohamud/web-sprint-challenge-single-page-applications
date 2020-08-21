@@ -27,15 +27,15 @@ export default function PizzaForm(props) {
 
   return (
     <div className="pizza">
-      <h1>Build Your Own Pizza</h1>
+      
       
       <form onSubmit={onSubmit}>
+      <h1>Build Your Own Pizza</h1>
       
 
-        {/* <div className='errors'>
-            <div>{errors.name}</div>
-            <div>{errors.sauce}</div>   
-        </div> */}
+        
+            
+       
         <label>Name for Order:
             <input
             type="text"

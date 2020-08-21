@@ -20,8 +20,6 @@ describe('Form App', () => {
         
 
         it("checks checkbox",  () => {
-            cy.get(':nth-child(9) > input')
-            .click()
             cy.get(':nth-child(10) > input')
             .click()
             cy.get(':nth-child(11) > input')
@@ -32,10 +30,12 @@ describe('Form App', () => {
             .click()
             cy.get(':nth-child(14) > input')
             .click()
+            cy.get(':nth-child(15) > input')
+            .click()
             
         })
         it("clicks submit", () => {
-            cy.get('button')
+            cy.get('form > button')
             .click()
         })
 
