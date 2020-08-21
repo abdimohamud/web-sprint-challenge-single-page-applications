@@ -6,8 +6,8 @@ export default function PizzaForm(props) {
     submit,
     inputChange,
     checkboxChange,
-    disabled,
-    errors
+    // disabled,
+    // errors
   } = props;
 
   const onSubmit = (evt) => {
@@ -32,11 +32,10 @@ export default function PizzaForm(props) {
       <form onSubmit={onSubmit}>
       
 
-        <div className='errors'>
-        {/* 🔥 RENDER THE VALIDATION ERRORS HERE */}
+        {/* <div className='errors'>
             <div>{errors.name}</div>
             <div>{errors.sauce}</div>   
-        </div>
+        </div> */}
         <label>Name for Order:
             <input
             type="text"
@@ -138,6 +137,7 @@ export default function PizzaForm(props) {
             type="checkbox"
             name="olives"
             checked={values.toppings.olives}
+            onChange={onCheckboxChange}
           />
         </label>
 
@@ -168,7 +168,7 @@ export default function PizzaForm(props) {
             onChange={onInputChange}
             />
         </label>
-        <button disabled={disabled}>submit</button>
+        <button>submit</button>
         
 
         

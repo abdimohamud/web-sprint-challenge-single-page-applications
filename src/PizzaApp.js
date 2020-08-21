@@ -34,8 +34,8 @@ const initialDisabled = true;
 export default function PizzaApp() {
   const [friends, setFriends] = useState([initialPizzas]); // array of friend objects
   const [formValues, setFormValues] = useState(initialFormValues); // object
-  const [formErrors, setFormErrors] = useState(initialFormErrors); // object
-  const [disabled, setDisabled] = useState(initialDisabled);
+//   const [formErrors, setFormErrors] = useState(initialFormErrors); // object
+//   const [disabled, setDisabled] = useState(initialDisabled);
 
   const getFriends = () => {
     // 🔥 STEP 5- IMPLEMENT! ON SUCCESS PUT FRIENDS IN STATE
@@ -66,25 +66,25 @@ export default function PizzaApp() {
       });
   };
   const inputChange = (name, value) => {
-    yup
-    .reach(formSchema, name)
-    //we can then run validate using the value
-    .validate(value)
-    // if the validation is successful, we can clear the error message
-    .then(valid => {
-      setFormErrors({
-        ...formErrors,
-        [name]: "",
-      })
-    })
+    // yup
+    // .reach(formSchema, name)
+    // //we can then run validate using the value
+    // .validate(value)
+    // // if the validation is successful, we can clear the error message
+    // .then(valid => {
+    //   setFormErrors({
+    //     ...formErrors,
+    //     [name]: "",
+    //   })
+    // })
     /* if the validation is unsuccessful, we can set the error message to the message 
       returned from yup (that we created in our schema) */
-    .catch(err => {
-      setFormErrors({
-        ...formErrors,
-        [name]: err.errors[0],
-      })
-    })
+    // .catch(err => {
+    //   setFormErrors({
+    //     ...formErrors,
+    //     [name]: err.errors[0],
+    //   })
+    // })
     setFormValues({
       ...formValues,
       [name]: value // NOT AN ARRAY
@@ -115,13 +115,13 @@ export default function PizzaApp() {
     // 🔥 STEP 9- POST NEW FRIEND USING HELPER
     postNewFriend(newFriend);
   };
-  useEffect(() => {
-    // 🔥 STEP 10- ADJUST THE STATUS OF `disabled` EVERY TIME `formValues` CHANGES
-    formSchema.isValid(formValues)
-      .then(valid => {
-        setDisabled(!valid);
-      })
-  }, [formValues])
+//   useEffect(() => {
+//     // 🔥 STEP 10- ADJUST THE STATUS OF `disabled` EVERY TIME `formValues` CHANGES
+//     formSchema.isValid(formValues)
+//       .then(valid => {
+//         setDisabled(!valid);
+//       })
+//   }, [formValues])
   
   
 
@@ -137,8 +137,8 @@ export default function PizzaApp() {
           inputChange={inputChange}
           checkboxChange={checkboxChange}
           submit={submit}
-          disabled={disabled}
-          errors={formErrors}
+        //   disabled={disabled}
+        //   errors={formErrors}
         />
 
         {friends.map((friend) => {
