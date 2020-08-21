@@ -22,6 +22,7 @@ function Pizza({ details }) {
           </ul>
         </div>
       )}
+      <p>Special Instructions: {details.special}</p>
     </div>
   );
 }

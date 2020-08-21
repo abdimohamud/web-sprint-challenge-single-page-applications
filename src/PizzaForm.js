@@ -5,9 +5,9 @@ export default function PizzaForm(props) {
     values,
     submit,
     inputChange,
-    checkboxChange
-    // disabled,
-    // errors,
+    checkboxChange,
+    disabled,
+    errors
   } = props;
 
   const onSubmit = (evt) => {
@@ -30,16 +30,21 @@ export default function PizzaForm(props) {
       <h1>Build Your Own Pizza</h1>
       
       <form onSubmit={onSubmit}>
-      <button>submit</button>
-          <label>Name for Order:
-              <input
-              type="text"
-              name="name"
-              value={values.name}
-              onChange={onInputChange}
-              />
+      
 
-          </label>
+        <div className='errors'>
+        {/* 🔥 RENDER THE VALIDATION ERRORS HERE */}
+            <div>{errors.name}</div>
+            <div>{errors.sauce}</div>   
+        </div>
+        <label>Name for Order:
+            <input
+            type="text"
+            name="name"
+            value={values.name}
+            onChange={onInputChange}
+            />
+        </label>
         <label>
           Choice of Size
           <select onChange={onInputChange} value={values.size} name="size">
@@ -52,40 +57,52 @@ export default function PizzaForm(props) {
             <option value="x-tra">X-tra Large</option>
           </select>
         </label>
+        <h3>Pick a Sauce</h3>
+        <label>
+            Original Red
+            <input
+            type="radio"
+            name="sauce"
+            value="red"
+            checked={values.sauce === "red"}
+            onChange={onInputChange}
+            />
+        </label>
 
-        <input
-          type="radio"
-          name="sauce"
-          value="red"
-          checked={values.sauce === "red"}
-          onChange={onInputChange}
-        />
-        <label for="male">Original Red</label>
-        <input
-          type="radio"
-          name="sauce"
-          value="ranch"
-          checked={values.sauce === "ranch"}
-          onChange={onInputChange}
-        />
-        <label for="female">Garlic Ranch</label>
-        <input
-          type="radio"
-          name="sauce"
-          value="bbq"
-          checked={values.sauce === "bbq"}
-          onChange={onInputChange}
-        />
-        <label for="other">BBQ Sauce</label>
-        <input
-          type="radio"
-          name="sauce"
-          value="spinach"
-          checked={values.sauce === "spinach"}
-          onChange={onInputChange}
-        />
-        <label for="other">Spinach Alfredo</label>
+        <label>
+            Garlic Ranch
+            <input
+            type="radio"
+            name="sauce"
+            value="ranch"
+            checked={values.sauce === "ranch"}
+            onChange={onInputChange}
+            /> 
+        </label>
+        
+        <label>
+            BBQ Sauce
+            <input
+            type="radio"
+            name="sauce"
+            value="bbq"
+            checked={values.sauce === "bbq"}
+            onChange={onInputChange}
+            />
+        </label>
 
+
+        <label >
+            Spinach Alfredo
+            <input
+            type="radio"
+            name="sauce"
+            value="spinach"
+            checked={values.sauce === "spinach"}
+            onChange={onInputChange}
+            />
+        </label>
+        <h3>Choose a Topping</h3>
         <label>
           pepperoni
           <input
@@ -143,6 +160,18 @@ export default function PizzaForm(props) {
             onChange={onCheckboxChange}
           />
         </label>
+        <label>Special Intructions:
+            <input
+            type="text"
+            name="special"
+            value={values.special}
+            onChange={onInputChange}
+            />
+        </label>
+        <button disabled={disabled}>submit</button>
+        
+
+        
       </form>
     </div>
   );
